@@ -23,9 +23,14 @@ function clickEventHandler() {
         var tText = json.contents.translated;
         output.innerText = tText;
     })
+    .catch(errorHandler)
     
     
 }
 
+//error handling
+function errorHandler(){
+    alert("Something wrong with the server. Try after sometime.")
+};
 
 
