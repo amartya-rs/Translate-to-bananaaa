@@ -12,12 +12,29 @@
 
     <!--css styling-->
     <style>
+
+        #header {
+            background-color: yellow;
+            padding: 2.5rem;
+            color: black;
+            margin-bottom: 5rem;
+            font-weight: 500;
+            font-size: x-large;
+            text-align: center;
+
+        }
+        
         #text-area {
             width: 60%;
             height: 8rem;
             display: block;
             margin: auto;
             padding: 1rem;
+            
+        }
+
+        body {
+            margin: 0rem;
         }
 
         
@@ -33,18 +50,31 @@
             border-style: solid;
             border-width: 1px;
             margin: auto;
+           
             padding: 1rem;
             text-align: left;
         }
 
         .btn-div {
             text-align: center;
+            padding: 1rem;
         
+        }
+
+        #btn-translate {
+            background-color: yellow;
+            margin: 2rem;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
         }
     </style>
 
 
     <!--html-->
+
+    <header id="header">
+        Banana Translate
+    </header>
 
     <section>
         <textarea id="text-area" placeholder="Enter your text in english"></textarea>
@@ -54,6 +84,7 @@
         <div class="output-div"></div>
     </section>
 
+    
 
     <script src="app.js" type="text/javascript"></script>
 </body>
