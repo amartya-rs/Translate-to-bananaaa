@@ -1,35 +1,29 @@
-var textArea = document.querySelector("#text-area");
-var button = document.querySelector("#btn-translate");
-var output = document.querySelector(".output-div");
+const textArea = document.querySelector("#text-area");
+const button = document.querySelector("#btn-translate");
+const output = document.querySelector(".output-div");
 
-button.addEventListener("click", clickEventHandler);
-
-
-
-var url = "https://api.funtranslations.com/translate/minion.json";
+const url = "https://api.funtranslations.com/translate/minion.json";
 
 
-function serverUrl (text) {
-    return url + "?" + "text=" + text
-}
+let serverUrl = text => `${url}?text=${text}`;
 
 
-function clickEventHandler() {
-    var textInput = textArea.value;
+let clickEventHandler = () => {
+    const textInput = textArea.value;
 
     fetch(serverUrl(textInput))
     .then(response => response.json())
     .then(json => {
-        var tText = json.contents.translated;
+        const tText = json.contents.translated;
         output.innerText = tText;
     })
     .catch(errorHandler)
-    
-    
 }
 
+button.addEventListener("click", clickEventHandler);
+
 //error handling
-function errorHandler(){
+let errorHandler = () => {
     alert("Something wrong with the server. Try after sometime.")
 };
 
